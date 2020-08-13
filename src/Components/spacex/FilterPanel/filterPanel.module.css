@@ -1,0 +1,38 @@
+.filterPanelContainer{
+    background-color: white;
+    border-radius: 6px;
+    padding: 8px 8px 44px;
+    margin-bottom: 18px;
+}
+.buttonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12%;
+    padding: 0 25%;
+    justify-content: center;
+}
+.header{
+    border-bottom: 2px solid lightgray;
+    margin: 16px 25%;
+    padding-bottom: 8px;
+}
+h3 {
+    margin: 0;
+    text-align: left;
+}
+@media(min-width: 700px) {
+    .buttonContainer {
+        column-gap: 8px;
+        padding: 8px 0;
+    }
+    .header{
+        margin: 16px 22px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .buttonContainer {
+        column-gap: 24px;
+        padding: 8px 16px;
+    }
+}

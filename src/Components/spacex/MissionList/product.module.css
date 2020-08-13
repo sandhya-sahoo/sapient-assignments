@@ -1,0 +1,31 @@
+.filterPanel {
+    background-color: #e7edee;
+    border-radius: 6px;
+}
+
+@media(min-width: 700px) {
+    .containerRow {
+        display: flex;
+    }
+    .filterPanel {
+        flex-basis: 26%;
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-left: 16px;
+        justify-content: space-around;
+        column-gap: 2%;
+    }
+}
+
+@media(min-width: 1024px) {
+    .filterPanel {
+        flex-basis: 22%;
+    }
+    .row {
+        column-gap: 0;
+    }
+}
