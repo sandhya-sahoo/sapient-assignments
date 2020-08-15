@@ -21,7 +21,7 @@ class ItemCard extends React.Component {
             Mission Ids:
             {item.mission_id && item.mission_id.length ? (
               item.mission_id.map((id) => {
-                return <li className={styles.itemColor} key={id}>Lunch Year :{id}</li>;
+                return <li className={styles.itemColor} key={id}>{id}</li>;
               })
             ) : (
               <li className={styles.itemColor}>{item.rocket.rocket_id}</li>
