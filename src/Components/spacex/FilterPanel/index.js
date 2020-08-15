@@ -10,28 +10,10 @@ class FilterPanel extends React.Component {
         this.state = {
             year: '',
             lunch: false,
-            landing: false,
+            landing: false
         }
-        this.findUniqueYear = this.findUniqueYear.bind(this);
         this.deligatedEvent = this.deligatedEvent.bind(this);
     }
-
-    findUniqueYear(itemList) {
-        let lunchYrArr = [],
-          filterUniqueYear = [];
-        if (itemList && itemList.length) {
-          itemList.map((item) => {
-            return lunchYrArr.push(item.launch_year);
-          });
-        }
-        if (lunchYrArr.length) {
-          lunchYrArr = lunchYrArr.sort();
-          filterUniqueYear = lunchYrArr.filter(
-            (item, index, arr) => arr.indexOf(item) === index
-          );
-        }
-        return filterUniqueYear;
-      }
 
     deligatedEvent(e) {
         if (e.target.parentNode.id === "yearBtn" && e.target.value != "") {
@@ -76,20 +58,21 @@ class FilterPanel extends React.Component {
             }
           );
         }
-      }
+    }
     
     render() {
-        let uniqueYearValues = this.findUniqueYear(this.props.data);
+        const lunchyears = [2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019, 2020];
+        
         return (
           <div
             className={styles.filterPanelContainer}
             onClick={(e) => this.deligatedEvent(e)}
           >
             <h3>Filters</h3>
-            <div className={styles.header}>Lunch Year</div>
+        <div className={styles.header}>Lunch Year {this.state.lunch}</div>
             <div className={styles.buttonContainer} id="yearBtn">
-              {uniqueYearValues.length
-                ? uniqueYearValues.map((item, index) => {
+              {lunchyears.length
+                ? lunchyears.map((item, index) => {
                     return (
                       <Button
                         onClick={() =>
@@ -100,6 +83,7 @@ class FilterPanel extends React.Component {
                           )
                         }
                         value={item}
+                        active={this.state.year == item ? true: false }
                       />
                     );
                   })
@@ -117,6 +101,7 @@ class FilterPanel extends React.Component {
                     )
                   }
                   value="true"
+                  active={this.state.lunch == "true" ? true : false }
                 />
                 <Button
                   onClick={() =>
@@ -127,6 +112,7 @@ class FilterPanel extends React.Component {
                     )
                   }
                   value="false"
+                  active={this.state.lunch == "false" ? true : false }
                 />
               </div>
             </div>
@@ -142,6 +128,8 @@ class FilterPanel extends React.Component {
                     )
                   }
                   value="true"
+                  active={this.state.landing == "true" ? true : false }
+
                 />
                 <Button
                   onClick={() =>
@@ -152,6 +140,9 @@ class FilterPanel extends React.Component {
                     )
                   }
                   value="false"
+                  active={this.state.landing == "false" ? true : false }
+
+
                 />
               </div>
             </div>

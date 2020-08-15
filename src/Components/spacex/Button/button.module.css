@@ -1,4 +1,4 @@
-.btn {
+.btn, .active {
     padding: 4px 18px;
     border-radius: 6px;
     border: 1px solid white;
@@ -9,13 +9,17 @@
     background-color: palegreen;
     cursor: pointer;
 }
+
+.active {
+    background-color: seagreen;
+}
 @media(min-width: 700px){
-    .btn {
+    .btn , .active {
         padding: 4px 12px;
     }
 }
 @media(min-width: 1024px) { 
-    .btn {
+    .btn , .active {
         padding: 4px 16px;
     }
 }

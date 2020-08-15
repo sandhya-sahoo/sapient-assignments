@@ -9,7 +9,7 @@
     flex-wrap: wrap;
     column-gap: 12%;
     padding: 0 25%;
-    justify-content: center;
+    /* justify-content: center; */
 }
 .header{
     border-bottom: 2px solid lightgray;
@@ -35,4 +35,8 @@ h3 {
         column-gap: 24px;
         padding: 8px 16px;
     }
+}
+
+.myClass {
+    background-color: palegreen;
 }

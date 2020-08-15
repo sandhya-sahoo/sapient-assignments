@@ -16,11 +16,13 @@ class MissionList extends React.Component {
   render() {
     return (
       <div className={styles.containerRow}>
-        {this.props.product && this.props.product.length && (
+        {this.props.product && this.props.product.length ? (
           <div className={styles.filterPanel}>
             <FilterPanel data={this.props.product} />
           </div>
-        )}
+        )
+        : (null)
+      }
         <div className={styles.row}>
           {this.props.product && this.props.product.length ? (
             this.props.product.map((item, index) => {

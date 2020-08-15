@@ -26,7 +26,7 @@ export const getItems = () => {
       url += `&land_success=${landing}`;
     }
     if (year !== "") {
-      url += `&lunch_year=${year}`;
+      url += `&launch_year=${year}`;
     }
   
     return (dispatch) => {

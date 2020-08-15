@@ -8,7 +8,7 @@ class Button extends React.Component {
     render() {
         return(
             <button 
-                className={styles.btn} 
+                className={this.props.active ? styles.active : styles.btn}
                 key={this.props.key} 
                 value={this.props.value}
                 >
